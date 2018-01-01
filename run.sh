@@ -11,4 +11,4 @@ if [ ! -z "${USERS}" ]; then
   done
 fi
 
-smbd --foreground --log-stdout -d 3 < /dev/null
+smbd --foreground --log-stdout -d ${LOGLEVEL:0} < /dev/null

@@ -12,7 +12,7 @@ if [ ! -z "${USERS}" ]; then
     U_NAME=$( echo $USER | awk  -F ':' '{ print $1 }' )
     U_ID=$( echo $USER | awk  -F ':' '{ print $2 }' )
     echo "Creating user ${U_NAME} with UID ${U_ID}"
-    adduser -h /var/empty -G users -s /bin/true -D -H -u ${U_ID} ${U_NAME}
+    id ${U_NAME} || adduser -h /var/empty -G users -s /bin/true -D -H -u ${U_ID} ${U_NAME}
   done
 fi
 
